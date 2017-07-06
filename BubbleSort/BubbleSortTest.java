@@ -17,6 +17,7 @@ public class BubbleSortTest {
 		return Arrays.equals(bs.bubbleSort(unsorted), sorted);
 	}
 
+
 	// Tests for the case of 2 items in the array.
 	public static boolean testTwoItems() {
 		int[] unsorted = new int[]{5, 2};
@@ -27,6 +28,7 @@ public class BubbleSortTest {
 
 		return Arrays.equals(bs.bubbleSort(unsorted), sorted);
 	}
+
 
 	// Tests for the case of no items in the array.
 	public static boolean testNoItems() {
@@ -39,6 +41,7 @@ public class BubbleSortTest {
 		return Arrays.equals(bs.bubbleSort(unsorted), sorted);
 	}
 
+
 	// Tests for the case with many items in the array.
 	public static boolean testManyItems() {
 		int[] unsorted = new int[]{124, 5, 2, 10, 123,};
@@ -49,6 +52,7 @@ public class BubbleSortTest {
 
 		return Arrays.equals(bs.bubbleSort(unsorted), sorted);
 	}
+
 
 	// Main, runs all of the tests and prints out the results.
 	public static void main(String[] args) {
