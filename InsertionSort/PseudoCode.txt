@@ -1,0 +1,8 @@
+insertionsort(unsortedarray)
+	if (length(unsortedarray) == 1 or length(unsortedarray) == 0)
+		return unsortedarray
+
+	for i from 1 to length(unsortedarray-1)
+		for j from i to 1
+			if (unsortedarray[j-1] > unsortedarray[i])
+				swap (unsortedarray[j-1], unsortedarray[j])

@@ -57,10 +57,25 @@ public class BubbleSortTest {
 	// Main, runs all of the tests and prints out the results.
 	public static void main(String[] args) {
 
-		if(testOneItem()) ++passedTests;
-		if(testTwoItems()) ++passedTests;
-		if(testNoItems()) ++passedTests;
-		if(testManyItems()) ++passedTests;
+		if(testOneItem())
+			++passedTests;
+		else
+			System.out.println("Test One Item: Failed.");
+
+		if(testTwoItems())
+			++passedTests;
+		else
+			System.out.println("Test Two Item: Failed.");
+
+		if(testNoItems())
+			++passedTests;
+		else
+			System.out.println("Test No Item: Failed.");
+
+		if(testManyItems())
+			++passedTests;
+		else
+			System.out.println("Test Many Item: Failed.");
 
 		System.out.println("Tests Passed: " + passedTests + " / " + numTests);
 	}
