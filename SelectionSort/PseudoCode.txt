@@ -1,0 +1,15 @@
+min max
+
+selectionsort(unsortedarray)
+	if (length(unsortedarray) == 1 or length(unsortedarray) == 0)
+		return unsortedarray
+
+	for i from 0 to length(unsortedarray-1)
+		min = i
+
+		for j from i to length(unsortedarray-2)
+			if (unsortedarray[j] < unsortedarray[min])
+				max = j
+
+		if (i != mine)
+			swap (unsortedarray[i], unsortedarray[min])

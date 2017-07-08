@@ -14,20 +14,20 @@ JFLAGS = -g
 # typing 'make' will invoke the first target entry in the makefile
 # (the default one in this case)
 #
-default: InsertionSort.class InsertionSortTest.class
+default: SelectionSort.class SelectionSortTest.class
 
-# this target entry builds the InsertionSort and InsertionSortTest Classes
+# this target entry builds the SelectionSort and SelectionSortTest Classes
 #
-InsertionSort.class: InsertionSort.java
-	$(JCC) $(JFLAGS) InsertionSort.java
+SelectionSort.class: SelectionSort.java
+	$(JCC) $(JFLAGS) SelectionSort.java
 
-InsertionSortTest.class: InsertionSortTest.java
-	$(JCC) $(JFLAGS) InsertionSortTest.java
+SelectionSortTest.class: SelectionSortTest.java
+	$(JCC) $(JFLAGS) SelectionSortTest.java
 
 # Running tests to make sure our code is working.
 # 'make test' to run tests.
-test: InsertionSortTest.class
-	java InsertionSortTest
+test: SelectionSortTest.class
+	java SelectionSortTest
 
 # To start over from scratch, type 'make clean'.
 # Removes all .class files, so that the next make rebuilds them

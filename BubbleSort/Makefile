@@ -16,9 +16,7 @@ JFLAGS = -g
 #
 default: BubbleSort.class BubbleSortTest.class
 
-# this target entry builds the Average class
-# the Average.class file is dependent on the Average.java file
-# and the rule associated with this entry gives the command to create it
+# this target entry builds the BubbleSort and BubbleSortTest Classes
 #
 BubbleSort.class: BubbleSort.java
 	$(JCC) $(JFLAGS) BubbleSort.java

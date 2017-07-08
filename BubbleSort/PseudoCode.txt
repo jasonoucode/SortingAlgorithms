@@ -1,4 +1,4 @@
-blesort(unsortedarray)
+bubblesort(unsortedarray)
 	if (length(unsortedarray) == 1 or length(unsortedarray) == 0)
 		return unsortedarray
 
