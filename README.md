@@ -1,5 +1,5 @@
 # SortingAlgorithms
-Sorting algorithms for personal learning.
+[Java] Sorting algorithms for personal learning.
 
 __Language__: _Java_
 
