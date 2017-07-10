@@ -1,6 +1,23 @@
 // Bubble Sort Class
 public class BubbleSort {
 
+	// Swaps two items in an array
+	private static int[] swap(int[] array, int indexOne, int indexTwo) {
+		// We swap without using a temp variable to avoid allocating extra space.
+		// Swap is implemented using addition and subtraction instead.
+		// Assume a = 5, b = 10,
+		// 		a = 5 + 10 (a = 15)
+		// 		b = 15 - 10 (b = 5)
+		// 		a = 15 - 5 (a = 10)
+		// Results: a = 10, b = 5
+		array[indexOne] = array[indexOne] + array[indexTwo];
+		array[indexTwo] = array[indexOne] - array[indexTwo];
+		array[indexOne] = array[indexOne] - array[indexTwo];
+
+		return array;
+	}
+
+
 	// Bubble Sort Implementation
 	public static int[] bubbleSort(int[] unsortedArray) {
 		// If number of elements in array is 1,
@@ -19,18 +36,8 @@ public class BubbleSort {
 				// If we find that there is a value in the front of the array
 				// 		that is bigger than the one after it, then we swap it with
 				// 		the smaller value after it.
-				if (unsortedArray[startIndex-1] > unsortedArray[startIndex]) {
-					// We swap without using a temp variable to avoid allocating extra space.
-					// Swap is implemented using addition and subtraction instead.
-					// Assume a = 5, b = 10,
-					// 		a = 5 + 10 (a = 15)
-					// 		b = 15 - 10 (b = 5)
-					// 		a = 15 - 5 (a = 10)
-					// Results: a = 10, b = 5
-					unsortedArray[startIndex] = unsortedArray[startIndex] + unsortedArray[startIndex-1];
-					unsortedArray[startIndex-1] = unsortedArray[startIndex] - unsortedArray[startIndex-1];
-					unsortedArray[startIndex] = unsortedArray[startIndex] - unsortedArray[startIndex-1];
-				}
+				if (unsortedArray[startIndex-1] > unsortedArray[startIndex])
+					unsortedArray = swap(unsortedArray, startIndex, startIndex-1);
 			}
 		}
 

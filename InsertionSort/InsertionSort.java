@@ -1,6 +1,23 @@
 // Insertion Sort Class
 public class InsertionSort {
 
+	// Swaps two items in an array
+	private static int[] swap(int[] array, int indexOne, int indexTwo) {
+		// We swap without using a temp variable to avoid allocating extra space.
+		// Swap is implemented using addition and subtraction instead.
+		// Assume a = 5, b = 10,
+		// 		a = 5 + 10 (a = 15)
+		// 		b = 15 - 10 (b = 5)
+		// 		a = 15 - 5 (a = 10)
+		// Results: a = 10, b = 5
+		array[indexOne] = array[indexOne] + array[indexTwo];
+		array[indexTwo] = array[indexOne] - array[indexTwo];
+		array[indexOne] = array[indexOne] - array[indexTwo];
+
+		return array;
+	}
+
+
 	// Insertion Sort Implementation
 	public static int[] insertionSort(int[] unsortedArray) {
 		// If number of elements in array is 1,
@@ -20,18 +37,8 @@ public class InsertionSort {
 				// If we find that there is a value in the front of the array
 				// 		that is bigger than the one after it, then we swap it with
 				// 		the smaller value after it.
-				if (unsortedArray[currIndex-1] > unsortedArray[currIndex]) {
-					// We swap without using a temp variable to avoid allocating extra space.
-					// Swap is implemented using addition and subtraction instead.
-					// Assume a = 5, b = 10,
-					// 		a = 5 + 10 (a = 15)
-					// 		b = 15 - 10 (b = 5)
-					// 		a = 15 - 5 (a = 10)
-					// Results: a = 10, b = 5
-					unsortedArray[currIndex] = unsortedArray[currIndex] + unsortedArray[currIndex-1];
-					unsortedArray[currIndex-1] = unsortedArray[currIndex] - unsortedArray[currIndex-1];
-					unsortedArray[currIndex] = unsortedArray[currIndex] - unsortedArray[currIndex-1];
-				}
+				if (unsortedArray[currIndex-1] > unsortedArray[currIndex])
+					unsortedArray = swap(unsortedArray, currIndex, currIndex-1);
 			}
 		}
 

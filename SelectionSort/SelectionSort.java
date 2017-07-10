@@ -1,6 +1,23 @@
 // Selection Sort Class
 public class SelectionSort {
 
+	// Swaps two items in an array
+	private static int[] swap(int[] array, int indexOne, int indexTwo) {
+		// We swap without using a temp variable to avoid allocating extra space.
+		// Swap is implemented using addition and subtraction instead.
+		// Assume a = 5, b = 10,
+		// 		a = 5 + 10 (a = 15)
+		// 		b = 15 - 10 (b = 5)
+		// 		a = 15 - 5 (a = 10)
+		// Results: a = 10, b = 5
+		array[indexOne] = array[indexOne] + array[indexTwo];
+		array[indexTwo] = array[indexOne] - array[indexTwo];
+		array[indexOne] = array[indexOne] - array[indexTwo];
+
+		return array;
+	}
+
+
 	// Selection Sort Implementation
 	public static int[] selectionSort(int[] unsortedArray) {
 
@@ -25,18 +42,8 @@ public class SelectionSort {
 			// Because we're using a swap dependent on not using extra space in memory,
 			//		we must make sure we are not trying to swap the same index or else
 			//		we get the value 0.
-			if (startIndex != minIndex) {
-				// We swap without using a temp variable to avoid allocating extra space.
-				// Swap is implemented using addition and subtraction instead.
-				// Assume a = 5, b = 10,
-				// 		a = 5 + 10 (a = 15)
-				// 		b = 15 - 10 (b = 5)
-				// 		a = 15 - 5 (a = 10)
-				// Results: a = 10, b = 5
-				unsortedArray[minIndex] = unsortedArray[minIndex] + unsortedArray[startIndex];
-				unsortedArray[startIndex] = unsortedArray[minIndex] - unsortedArray[startIndex];
-				unsortedArray[minIndex] = unsortedArray[minIndex] - unsortedArray[startIndex];
-			}
+			if (startIndex != minIndex)
+				unsortedArray = swap(unsortedArray, startIndex, minIndex);
 		}
 
 		// Return the sorted array
