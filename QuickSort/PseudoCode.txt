@@ -1,0 +1,20 @@
+partition(int arr[], left, right)
+	pivot <- arr[right]
+	pIndex <- left
+
+	from i <- left to right-1
+		if (arr[i] <= pivot)
+			swap(arr[i], arr[pIndex])
+			pIndex++
+
+	swap(arr[pIndex], a[right])
+
+	return pIndex
+
+
+quickSort(int arr[], int left, int right)
+	if (left >= right)
+		pIndex <- partition(arr, left, right)
+
+		quickSort(arr, start, pIndex-1)
+		quickSort(arr, pIndex+1, end)
